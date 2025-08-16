@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Travel Website</h1>
+        <nav>
+            <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+            <a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">About</a>
+            <a href="{% url 'services' %}" class="{% if request.path == '/services/' %}active{% endif %}">Services</a>
+            <a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active{% endif %}">Contact</a>
+        </nav>
+    </header>
+</body>
+</html>

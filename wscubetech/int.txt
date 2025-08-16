@@ -1,0 +1,3 @@
+int
+str
+slug     hello-ws-iip types of data  

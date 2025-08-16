@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+    <main>
+        <section class="hero">
+            <img src="/static/hero-banner.jpg" alt="Travel Banner">
+            <h2>Userform</h2>
+            <p>Discover breathtaking destinations and create unforgettable memories.</p>
+        </section>
+        <section class="featured-destinations">
+            <h2>Featured Destinations</h2>
+            <div class="destination-grid">
+                <div>
+                    <img src="/static/destination1.jpg" alt="Beach Paradise">
+                    <h3>Beach Paradise</h3>
+                </div>
+                <div>
+                    <img src="/static/destination2.jpg" alt="Mountain Escape">
+                    <h3>Mountain Escape</h3>
+                </div>
+                <div>
+                    <img src="/static/destination3.jpg" alt="City Adventure">
+                    <h3>City Adventure</h3>
+                </div>
+                <div class ="row">
+                   <div class="col-12">
+                    <form method = "post" action=" {% url 'submitform' %}">
+                        {% csrf_token %}
+                        <div>
+                            <label for ="">Value1</label>
+                            <input type ="text" name="num1" value="{{n1}}" class="form-control"/>
+                        </div>
+                        <div>
+                            <label for ="">Value2</label>
+                            <input type ="text" name="num2" value="{{n2}}" class="form-control"/>
+                        </div>
+                        
+                        <div class ="pt-4">
+                            <button type="submit">Save</button>
+                        </div>
+                        
+                        <br>
+                        output :
+                        <input type = "text" value="{{output}}"/>
+                    </form>
+                   </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <br>
+{% endblock %}    
+
+
+
